@@ -1,70 +1,140 @@
-# Getting Started with Create React App
+# 🍿 usePopcorn
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based movie search and watchlist application that allows users to discover movies and create their personal watchlist with ratings.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+- **Movie Search**: Search for movies using the OMDB API
+- **Movie Details**: View detailed information about movies including plot, cast, director, and ratings
+- **Personal Watchlist**: Add movies to your personal watchlist with custom ratings
+- **Star Rating System**: Rate movies using an interactive star rating component
+- **Local Storage**: Your watchlist persists between sessions
+- **Responsive Design**: Clean, modern interface with dark theme
+- **Keyboard Navigation**: Press Enter to focus search, Escape to close movie details
 
-### `npm start`
+## 🚀 Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js (version 14 or higher)
+- npm or yarn package manager
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd usepopcorn
+```
 
-### `npm run build`
+2. Install dependencies:
+```bash
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Start the development server:
+```bash
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🎯 How to Use
 
-### `npm run eject`
+1. **Search Movies**: Type in the search bar to find movies
+2. **View Details**: Click on any movie to see detailed information
+3. **Rate Movies**: Use the star rating system to rate movies (1-10 stars)
+4. **Add to Watchlist**: Click "Add to List" after rating a movie
+5. **Manage Watchlist**: View your watchlist summary with average ratings and runtime
+6. **Remove Movies**: Click the X button to remove movies from your watchlist
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🛠️ Built With
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **React** - Frontend framework
+- **Custom Hooks** - For state management and side effects
+- **OMDB API** - Movie data source
+- **CSS3** - Styling and responsive design
+- **Local Storage** - Data persistence
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📁 Project Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+src/
+├── App.js              # Main application component
+├── StarRating.js       # Star rating component
+├── useMovies.js        # Custom hook for movie API calls
+├── useLocalStorageState.js  # Custom hook for localStorage
+├── useKey.js           # Custom hook for keyboard events
+├── index.js            # React app entry point
+└── index.css           # Global styles
+```
 
-## Learn More
+## 🎨 Key Components
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Movie Search**: Real-time search with debouncing
+- **Movie List**: Displays search results with posters and basic info
+- **Movie Details**: Comprehensive movie information view
+- **Watchlist Summary**: Shows statistics about watched movies
+- **Star Rating**: Interactive rating component with hover effects
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔧 Custom Hooks
 
-### Code Splitting
+- [`useMovies`](src/useMovies.js) - Handles movie API calls and loading states
+- [`useLocalStorageState`](src/useLocalStorageState.js) - Manages localStorage state
+- [`useKey`](src/useKey.js) - Handles keyboard event listeners
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🌟 Features in Detail
 
-### Analyzing the Bundle Size
+### Smart Search
+- Minimum 3 characters required
+- Automatic loading states
+- Error handling for API failures
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Persistent Watchlist
+- Automatically saves to localStorage
+- Tracks user ratings and viewing statistics
+- Calculates average ratings and total runtime
 
-### Making a Progressive Web App
+### Keyboard Shortcuts
+- **Enter**: Focus search input
+- **Escape**: Close movie details
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📱 Responsive Design
 
-### Advanced Configuration
+The app is fully responsive and works on:
+- Desktop computers
+- Tablets
+- Mobile devices
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🚀 Available Scripts
 
-### Deployment
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from Create React App (one-way operation)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🎬 API
 
-### `npm run build` fails to minify
+This project uses the [OMDB API](http://www.omdbapi.com/) to fetch movie data. The API provides:
+- Movie search functionality
+- Detailed movie information
+- Poster images
+- Ratings from various sources
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🙏 Acknowledgments
+
+- [OMDB API](http://www.omdbapi.com/) for providing movie data
+- Create React App for the initial project setup
+- React community for excellent documentation and resources
